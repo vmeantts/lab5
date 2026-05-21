@@ -1,10 +1,22 @@
-﻿#include "contains.h"
+﻿#include "change.h"
+
+template <typename T>
+void printArray(T* arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << "\n";
+}
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
 
     // ===== INT =====
+
 
     int size1;
 
@@ -20,19 +32,24 @@ int main()
         cin >> arr1[i];
     }
 
-    int value1;
+    cout << "\nМассив до обмена:\n";
 
-    cout << "Введите элемент для поиска: ";
-    cin >> value1;
+    printArray(arr1, size1);
 
-    if (contains(value1, arr1, size1))
-    {
-        cout << "Элемент найден\n";
-    }
-    else
-    {
-        cout << "Элемент не найден\n";
-    }
+    int first1, second1;
+
+    cout << "Введите первый элемент для обмена: ";
+    cin >> first1;
+
+    cout << "Введите второй элемент для обмена: ";
+    cin >> second1;
+
+    change(first1, second1, arr1, size1);
+
+    cout << "Массив после обмена:\n";
+
+    printArray(arr1, size1);
+
 
     // ===== DOUBLE =====
 
@@ -50,21 +67,27 @@ int main()
         cin >> arr2[i];
     }
 
-    double value2;
+    cout << "\nМассив до обмена:\n";
 
-    cout << "Введите элемент для поиска: ";
-    cin >> value2;
+    printArray(arr2, size2);
 
-    if (contains(value2, arr2, size2))
-    {
-        cout << "Элемент найден\n";
-    }
-    else
-    {
-        cout << "Элемент не найден\n";
-    }
+    double first2, second2;
+
+    cout << "Введите первый элемент для обмена: ";
+    cin >> first2;
+
+    cout << "Введите второй элемент для обмена: ";
+    cin >> second2;
+
+    change(first2, second2, arr2, size2);
+
+    cout << "Массив после обмена:\n";
+
+    printArray(arr2, size2);
+
 
     // ===== STRING =====
+
 
     int size3;
 
@@ -80,19 +103,23 @@ int main()
         cin >> arr3[i];
     }
 
-    string value3;
+    cout << "\nМассив до обмена:\n";
 
-    cout << "Введите строку для поиска: ";
-    cin >> value3;
+    printArray(arr3, size3);
 
-    if (contains(value3, arr3, size3))
-    {
-        cout << "Элемент найден\n";
-    }
-    else
-    {
-        cout << "Элемент не найден\n";
-    }
+    string first3, second3;
+
+    cout << "Введите первую строку для обмена: ";
+    cin >> first3;
+
+    cout << "Введите вторую строку для обмена: ";
+    cin >> second3;
+
+    change(first3, second3, arr3, size3);
+
+    cout << "Массив после обмена:\n";
+
+    printArray(arr3, size3);
 
     delete[] arr1;
     delete[] arr2;
